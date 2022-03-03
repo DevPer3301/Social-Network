@@ -1,0 +1,15 @@
+.vote_btn{
+    width: 50px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.vote_link{
+    text-decoration: none;
+}
+
+.voted{
+    background: blue;
+    color: white;
+}

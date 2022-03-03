@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css' ) }}">
+</head>
+<body>
+    <div id="nav_bar">
+        {% if not current_user.is_authenticated %}
+            <a href="{{ url_for('main') }}">
+                <button>Posts</button>
+            </a>
+            <a href="{{ url_for('login_page') }}">
+                <button>Sign In</button>
+            </a>
+            <a href="{{ url_for('register_page') }}">
+                <button>Sign Up</button>
+            </a>
+        {% else %}
+            <p>Logged In</p>
+            <a href="{{ url_for('main') }}">
+                <button>Posts</button>
+            </a>
+            <a href="{{ url_for('profile_page') }}">
+                <button>Profile</button>
+            </a>
+            <a href="{{ url_for('logout_page') }}">
+                <button>Logout</button>
+            </a>
+        {% endif %}
+    </div>
+    <div id="main_div">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+</body>
+</html>
